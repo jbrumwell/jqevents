@@ -1,0 +1,27 @@
+{
+  "name": "jqevents",
+  "version": "0.1.0",
+  "description": "jqevents is a node.js event emitter based on jquery events system",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbrumwell/jqevents.git"
+  },
+  "devDependencies": {
+      "chai": "*",
+      "mocha": "*" 
+  },
+  "keywords": [
+    "eventemitter",
+    "events",
+    "jquery"
+  ],
+  "author": "Jason Brumwell",
+  "license": "MIT"
+}
