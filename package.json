@@ -1,6 +1,6 @@
 {
   "name": "jqevents",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "jqevents is a node.js event emitter based on jquery events system",
   "main": "index.js",
   "directories": {
