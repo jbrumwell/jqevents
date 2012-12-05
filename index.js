@@ -36,13 +36,13 @@ JqueryEmitter.prototype.emit = function(type) {
             handlers,
             newHandlers = [];
             
-        if (-1 !== event.indexOf('.')) {                            
+        if (-1 !== event.indexOf('.') && _this._events) {                            
             ns = event.split('.');
-            event = ns.shift();            
+            event = ns.shift();                       
             
             handlers = _this._events[event];
             
-            if (handlers) {
+            if (handlers) {                
                 if (Array.isArray(handlers)) {
                     handlers.forEach(function(handler) {
                         if (nsMatch(ns, handler.__eens)) {
@@ -194,7 +194,19 @@ module.exports = function(instance) {
     return instance;
 }.bind(null, new JqueryEmitter);
 
+var instances = {};
+
 module.exports.create = function(instance) {
-    return new JqueryEmitter;
+    var jqee;
+    
+    if (instance && instances[instance]) {
+        jqee = instances[instance];    
+    } else {
+        jqee = new JqueryEmitter
+    }
+    
+    return jqee;
 };
+
+module.exports.EventEmitter = JqueryEmitter;
 
